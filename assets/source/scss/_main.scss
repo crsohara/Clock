@@ -50,32 +50,33 @@ html {
 }
 
 .animate {
-	-webkit-animation: moveme 0.3s;
-	-webkit-transition: color .3s ease !important;
+	@include transition(color, .3s, ease);
+	@include animation(moveme, 0.3s);
 
 	@include media-min($bp-sm) {
-		-webkit-animation: moveme-sm 0.3s;
+		@include animation(moveme-sm, 0.3s);
 	}
 	@include media-min($bp-med) {
-		-webkit-animation: moveme-med 0.3s;
+		@include animation(moveme-med, 0.3s);
 	}
 	@include media-min($bp-lg) {
-		-webkit-animation: moveme-lg 0.3s;
+		@include animation(moveme-lg, 0.3s);
 	}
 }
 
-@-webkit-keyframes moveme{
+@include keyframes (moveme) {
   0%   { top: 0; }
   100% { top: -48px; }
 }
-@-webkit-keyframes moveme-sm{
+@include keyframes (moveme-sm) {
   0%   { top: 0; }
   100% { top: -97px; }
 }
-@-webkit-keyframes moveme-med{
+@include keyframes (moveme-med) {
   0%   { top: 0; }
   100% { top: -147px; }
-}@-webkit-keyframes moveme-lg{
+}
+@include keyframes (moveme-lg) {
   0%   { top: 0; }
   100% { top: -193px; }
 }

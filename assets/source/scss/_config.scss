@@ -13,3 +13,29 @@ $bp-lg: 1024px;
 		@content;
 	}
 }
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name}{
+		@content
+	}
+	@-moz-keyframes #{$name} {
+	    @content
+	}
+	@-o-keyframes #{$name} {
+	    @content
+	}
+	@keyframes #{$name} {
+	    @content
+	}
+}
+@mixin transition($color, $time, $method) {
+	-webkit-transition: $color $time $method;
+	-moz-transition: $color $time $method;
+	-ms-transition: $color $time $method;
+	-o-transition: $color $time $method;
+}
+@mixin animation($animation, $time) {
+	-webkit-animation: $animation $time;
+	-moz-animation: $animation $time;
+	-o-animation: $animation $time;
+	animation: $animation $time;
+}

@@ -4,6 +4,7 @@
 		MAX_HOUR = 23,
 		MAX_MIN = 59,
 		MAX_SEC = 59,
+		pfx = ["webkit", "moz", "MS", "o", ""],
 		clock = {};
 		clock.hourA = document.getElementById("h_a");
 		clock.hourB = document.getElementById("h_b");
@@ -79,15 +80,22 @@
 	}
 	setInterval(startTime, 1000);
 
-	clock.secondN.addEventListener('webkitAnimationEnd', function( event ) { 
+	function animationListener(){
 		updateTime();
-
     	clock.secondC.classList.remove("animate");
         clock.secondD.classList.remove("animate");
         clock.secondN.classList.remove("animate");
         clock.secondNst.classList.remove("animate");
         clock.secondD.style.color="";
 		clock.secondN.style.color="";
-    }, false );
+	}
+	
+	function PrefixedEvent(element, type, callback) {
+		for (var p = 0; p < pfx.length; p++) {
+			if (!pfx[p]) type = type.toLowerCase();
+			element.addEventListener(pfx[p]+type, callback, false);
+		}
+	}
+	PrefixedEvent(clock.secondN, "AnimationEnd", animationListener);
 
 }());
