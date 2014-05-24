@@ -1,0 +1,83 @@
+html {
+  font-family: tahoma;
+  font-size: 2.5em;
+  color: #333333; }
+  @media (min-width: 480px) {
+    html {
+      font-size: 5em; } }
+  @media (min-width: 720px) {
+    html {
+      font-size: 7.6em; } }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 10em; } }
+
+.container {
+  -webkit-user-select: none; }
+
+.digit-container, .time-separator {
+  display: inline-block;
+  cursor: default;
+  vertical-align: middle; }
+
+.digit-container {
+  height: 141px;
+  overflow: hidden; }
+  @media (min-width: 480px) {
+    .digit-container {
+      height: 291px; } }
+  @media (min-width: 720px) {
+    .digit-container {
+      height: 431px; } }
+  @media (min-width: 1024px) {
+    .digit-container {
+      height: 561px; } }
+
+.oldtime, .newtime, .newesttime {
+  -webkit-transition: top 0.4s ease;
+  position: relative;
+  top: 0;
+  color: rgba(0, 0, 0, 0.2); }
+
+.currenttime {
+  -webkit-transition: top 0.4s ease;
+  position: relative;
+  top: 0; }
+
+.animate {
+  -webkit-animation: moveme 0.3s;
+  -webkit-transition: color .3s ease !important; }
+  @media (min-width: 480px) {
+    .animate {
+      -webkit-animation: moveme-sm 0.3s; } }
+  @media (min-width: 720px) {
+    .animate {
+      -webkit-animation: moveme-med 0.3s; } }
+  @media (min-width: 1024px) {
+    .animate {
+      -webkit-animation: moveme-lg 0.3s; } }
+
+@-webkit-keyframes moveme {
+  0% {
+    top: 0; }
+
+  100% {
+    top: -48px; } }
+@-webkit-keyframes moveme-sm {
+  0% {
+    top: 0; }
+
+  100% {
+    top: -97px; } }
+@-webkit-keyframes moveme-med {
+  0% {
+    top: 0; }
+
+  100% {
+    top: -147px; } }
+@-webkit-keyframes moveme-lg {
+  0% {
+    top: 0; }
+
+  100% {
+    top: -193px; } }

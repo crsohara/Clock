@@ -1,0 +1,15 @@
+$font: tahoma;
+$black: #333;
+$grey: rgba(0,0,0,0.2);
+
+
+$bp-sm: 480px;
+$bp-med:  720px;
+$bp-lg: 1024px;
+
+
+@mixin media-min($bp) {
+	@media (min-width: $bp) {
+		@content;
+	}
+}

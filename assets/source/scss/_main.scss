@@ -1,0 +1,81 @@
+html {
+	font-family: $font;
+	font-size: 2.5em;
+	color: $black;
+	
+	@include media-min($bp-sm) {
+			font-size: 5em;
+	}
+	@include media-min($bp-med) {
+			font-size: 7.6em; 
+	}
+	@include media-min($bp-lg) {
+			font-size: 10em;
+	}
+}
+
+.container {
+	-webkit-user-select: none;
+}
+.digit-container, .time-separator {
+	display: inline-block;
+	cursor: default;
+	vertical-align: middle;
+}
+
+.digit-container {
+	height: 141px;
+	overflow: hidden;
+	
+	@include media-min($bp-sm) {
+		height: 291px;
+	}
+	@include media-min($bp-med) {
+		height: 431px;
+	}
+	@include media-min($bp-lg) {
+		height: 561px;
+	}
+}
+.oldtime, .newtime, .newesttime {
+	-webkit-transition: top 0.4s ease;
+	position: relative;
+	top: 0;
+	color: $grey;
+}
+.currenttime {
+	-webkit-transition: top 0.4s ease;
+	position: relative;
+	top: 0;
+}
+
+.animate {
+	-webkit-animation: moveme 0.3s;
+	-webkit-transition: color .3s ease !important;
+
+	@include media-min($bp-sm) {
+		-webkit-animation: moveme-sm 0.3s;
+	}
+	@include media-min($bp-med) {
+		-webkit-animation: moveme-med 0.3s;
+	}
+	@include media-min($bp-lg) {
+		-webkit-animation: moveme-lg 0.3s;
+	}
+}
+
+@-webkit-keyframes moveme{
+  0%   { top: 0; }
+  100% { top: -48px; }
+}
+@-webkit-keyframes moveme-sm{
+  0%   { top: 0; }
+  100% { top: -97px; }
+}
+@-webkit-keyframes moveme-med{
+  0%   { top: 0; }
+  100% { top: -147px; }
+}@-webkit-keyframes moveme-lg{
+  0%   { top: 0; }
+  100% { top: -193px; }
+}
